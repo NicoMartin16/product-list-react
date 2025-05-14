@@ -1,0 +1,89 @@
+.add_cart,
+.count_cart {
+    width: 200px;
+    border-radius: 5rem;
+    position: relative;
+    z-index: 1;
+    top: -1.5rem;
+    left: 20%;
+    padding: 0.8rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    box-sizing: border-box; 
+    height: 3.2rem; 
+}
+
+.add_cart {
+    border: 1px solid hsl(12, 20%, 44%);
+    justify-content: center;
+}
+
+.add_cart:hover {
+    color: hsl(14, 86%, 42%);
+    border: 1px solid hsl(14, 86%, 42%);
+    cursor: pointer;
+}
+
+.count_cart {
+    border: 1px solid hsl(14, 86%, 42%);
+    margin: 0;
+    justify-content: space-between;
+    color: hsl(20, 50%, 98%);
+    background-color: hsl(14, 86%, 42%);
+}
+
+.count_cart .decrement,
+.count_cart .increment {
+    color: hsl(14, 86%, 42%);
+    border-radius: 50%;
+    border: 1px solid hsl(20, 50%, 98%);
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.count_cart .decrement:hover,
+.count_cart .increment:hover {
+    color: hsl(20, 50%, 98%);
+    background-color: hsl(20, 50%, 98%);
+    border: 1px solid hsl(20, 50%, 98%);
+    cursor: pointer;
+}
+
+.count_cart:hover {
+    color: hsl(20, 50%, 98%);
+    background-color: hsl(14, 86%, 42%);
+    border: 1px solid hsl(14, 86%, 42%);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .add_cart,
+    .count_cart {
+        width: 160px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -1.5rem;
+        height: 2.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .add_cart img,
+    .count_cart img {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .count_cart .decrement,
+    .count_cart .increment {
+        width: 1.3rem;
+        height: 1.3rem;
+    }
+}
