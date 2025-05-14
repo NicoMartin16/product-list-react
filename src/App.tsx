@@ -14,7 +14,7 @@ function App() {
   const [isReset, setIsReset] = useState<boolean>(false);
 
   const getProducts = async () => {
-    const response = await fetch("../../../data/data.json");
+    const response = await fetch("/data.json");
     const data = await response.json();
     return data;
   };

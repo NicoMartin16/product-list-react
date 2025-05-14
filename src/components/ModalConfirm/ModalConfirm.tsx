@@ -14,9 +14,8 @@ const ModalConfirm = ({onClose, productsSelected}: ModalConfirmProps) => {
 
   return (
     <div className="overlay">
-      <div className="modal-confirm">
-        <div className="container-icon">
-          <img src="/src/assets/images/icon-order-confirmed.svg" alt="order-confirmed" />
+      <div className="modal-confirm">        <div className="container-icon">
+          <img src="/assets/images/icon-order-confirmed.svg" alt="order-confirmed" />
         </div>
         <div className="container-title">
           <p className="title rose-900">Order Confirmed</p>
@@ -26,9 +25,8 @@ const ModalConfirm = ({onClose, productsSelected}: ModalConfirmProps) => {
           {
             productsSelected.map((product, index) => (
               <div key={index} className="product">
-                <div className="product-info">
-                  <div className="container-image">
-                    <img src={`/src/`+ product.image.desktop} alt={product.name} />
+                <div className="product-info">                <div className="container-image">
+                    <img src={product.image.desktop} alt={product.name} />
                   </div>
                   <div className="product-details">
                     <p className="product-name rose-500">{product.name}</p>

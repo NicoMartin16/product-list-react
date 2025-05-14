@@ -27,17 +27,16 @@ const ProductItem = ({name, image, category, price, onReset, isReset, onAddToCar
       setQuantity(0);
     }
   }, [onReset]);
-  
+
   useEffect(() => {
     if(isReset) {
       setQuantity(0);
     }
   }, [isReset])
 
-    return (
-    <div className="product-item">
+    return (    <div className="product-item">
       <div className="product-image">
-        <img src={`/src/`+ image.desktop} alt={name} />
+        <img src={image.desktop} alt={name} />
       </div>
       <ButtonCount isReset={isReset} currentQuantity={quantity} onReset={onReset} onChangeQuantity={handleOnChangeQuantity}/>
       <div className="product-info">
