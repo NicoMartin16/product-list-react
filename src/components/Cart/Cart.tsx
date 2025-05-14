@@ -13,6 +13,8 @@ const Cart = ({
   onRemoveItem,
   onConfirmOrder,
 }: CartProps) => {
+  const baseUrl = import.meta.env.BASE_URL || '';
+  
   const getTotalPerProduct = (price: number, quantity: number | undefined) => {
     return price * (quantity || 0);
   };
@@ -53,9 +55,8 @@ const Cart = ({
                   onClick={(e) => removeItemFromCart(e, index)}
                   className="cart-item-remove"
                 >
-                  {" "}
-                  <img
-                    src="/assets/images/icon-remove-item.svg"
+                  {" "}                  <img
+                    src={`${import.meta.env.BASE_URL}assets/images/icon-remove-item.svg`}
                     alt="remove-item"
                   />
                 </div>
@@ -66,9 +67,8 @@ const Cart = ({
               <p className="amount rose-900">${getTotal()}</p>
             </div>
             <div className="cart-message bg-rose-100">
-              {" "}
-              <img
-                src="/assets/images/icon-carbon-neutral.svg"
+              {" "}              <img
+                src={`${import.meta.env.BASE_URL}assets/images/icon-carbon-neutral.svg`}
                 alt="carbon-neutral"
               />
               <p className="rose-300">
@@ -85,9 +85,8 @@ const Cart = ({
         ) : (
           <div>
             <div className="cart-empty">
-              {" "}
-              <img
-                src="/assets/images/illustration-empty-cart.svg"
+              {" "}              <img
+                src={`${import.meta.env.BASE_URL}assets/images/illustration-empty-cart.svg`}
                 alt="empty-cart"
               />
               <p className="rose-500">Your added items will appear here</p>

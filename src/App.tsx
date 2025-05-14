@@ -14,7 +14,9 @@ function App() {
   const [isReset, setIsReset] = useState<boolean>(false);
 
   const getProducts = async () => {
-    const response = await fetch(`/data.json`);
+    // Usar la base URL definida en vite.config.ts
+    const baseUrl = import.meta.env.BASE_URL || '';
+    const response = await fetch(`${baseUrl}data.json`);
     const data = await response.json();
     return data;
   };

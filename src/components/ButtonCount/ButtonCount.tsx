@@ -16,6 +16,7 @@ const ButtonCount = ({
 }: ButtonCountProps) => {
   const [isInCart, setIsInCart] = useState<boolean>(false);
   const [count, setCount] = useState<number>(0);
+  const baseUrl = import.meta.env.BASE_URL || '';
 
   useEffect(() => {
     if (onReset) {
@@ -68,23 +69,21 @@ const ButtonCount = ({
   return isInCart ? (
     <div className="count_cart bg-red">
       {" "}
-      <button onClick={handleDecrement} className="decrement bg-red">
-        <img
-          src="/assets/images/icon-decrement-quantity.svg"
+      <button onClick={handleDecrement} className="decrement bg-red">        <img
+          src={`${import.meta.env.BASE_URL}assets/images/icon-decrement-quantity.svg`}
           alt="decrement-icon"
         />
       </button>
       <p>{count}</p>{" "}
-      <button onClick={handleIncrement} className="increment bg-red">
-        <img
-          src="/assets/images/icon-increment-quantity.svg"
+      <button onClick={handleIncrement} className="increment bg-red">        <img
+          src={`${import.meta.env.BASE_URL}assets/images/icon-increment-quantity.svg`}
           alt="increment-icon"
         />
       </button>
     </div>
   ) : (
     <button onClick={handleAddToCart} className="add_cart">
-      <img src="/assets/images/icon-add-to-cart.svg" alt="add-icon" />
+      <img src={`${import.meta.env.BASE_URL}assets/images/icon-add-to-cart.svg`} alt="add-icon" />
       <p>Add to cart</p>
     </button>
   );
